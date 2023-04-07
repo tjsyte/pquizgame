@@ -17,12 +17,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -60,7 +54,7 @@ input[type="radio"] {
 }
 
 label {
-    margin-left: 10px;
+    padding: 15px;
 }
 
 .glitch {
@@ -222,14 +216,22 @@ button:hover {
         width: 50%;
     }
 
-    #scoreboard {
-        flex-wrap: wrap;
-        padding: 10px;
+    #player-score, #ai-score {
+        width: 50%;
+        margin-bottom: 10px;
     }
 
-    #player-score, #ai-score {
-        width: 45%;
-        margin-bottom: 10px;
+    #scoreboard {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #scoreboard > div {
+        margin-bottom: 40px;
+    }
+
+     #scoreboard span {
+        font-size: 18px;
     }
 }
 
@@ -265,5 +267,9 @@ button:hover {
     button {
         width: 70%;
         font-size: 14px;
+    }
+
+    label {
+        font-size: 16px;
     }
 }    
