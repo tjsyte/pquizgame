@@ -380,7 +380,7 @@ const problems = [
 	let currentProblemIndex = 0;
     let playerScore = 0;
     let aiScore = 0;
-    let timeRemaining = 120;
+    let timeRemaining = 150;
 
     const questionElem = document.getElementById("question");
     const optionsElem = document.getElementById("options");
@@ -448,6 +448,7 @@ const problems = [
 			currentProblemIndex++;
 			showProblem(problems[currentProblemIndex]);
 		}
+		
 	}
 	
 	function showFinalResult() {
@@ -456,6 +457,23 @@ const problems = [
 			message = "It's a tie with a score of " + playerScore + ".";
 		} else if (playerScore > 1 || aiScore > 1) {
 			message = "The game has ended. " + "The winner is " + (playerScore > aiScore ? "you" : "the AI") + " with a score of " + (playerScore > aiScore ? playerScore : aiScore) + ".";
+		}
+
+		if (playerScore > aiScore) {
+			playerScoreElem.style.backgroundColor = "green";
+			aiScoreElem.style.backgroundColor = "red";
+			aiScoreElem.style.color = "white";
+			playerScoreElem.style.color = "white";
+		} else if (aiScore > playerScore) {
+			playerScoreElem.style.backgroundColor = "red";
+			aiScoreElem.style.backgroundColor = "green";
+			aiScoreElem.style.color = "white";
+			playerScoreElem.style.color = "white";
+		} else {
+			playerScoreElem.style.backgroundColor = "gray";
+			aiScoreElem.style.backgroundColor = "gray";
+			aiScoreElem.style.color = "black";
+			playerScoreElem.style.color = "black";
 		}
 		
 		submitBtn.disabled = true;
