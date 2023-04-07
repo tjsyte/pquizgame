@@ -15,6 +15,14 @@ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CON
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -45,7 +53,15 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-}  
+}
+
+input[type="radio"] {
+    transform: scale(1.5);
+}
+
+label {
+    margin-left: 10px;
+}
 
 .glitch {
     font-size: 24px;
@@ -117,7 +133,7 @@ body {
 
 #timer {
     float: right;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
