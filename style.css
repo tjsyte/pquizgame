@@ -1,0 +1,253 @@
+/*
+Copyright (c) 2023 tjsyte
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS 
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #dfd8d8;
+    background: linear-gradient(to right, #539165, #95d9c3);
+    animation: background-animation 10s ease-in-out infinite alternate;
+}
+    
+@keyframes background-animation {
+    0% {
+        background: linear-gradient(to right, #539165, #95d9c3);
+    }
+    
+    50% {
+        background: linear-gradient(to right, #95d9c3, #539165);
+    }
+
+    100% {
+        background: linear-gradient(to right, #539165, #95d9c3);
+    }
+}
+
+#quiz-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #122529;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}  
+
+.glitch {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+    animation: glitch 725ms infinite;
+}
+
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.glitch span:first-child {
+    animation: glitch 500ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-0.04em, -0.03em);
+    opacity: 0.75;
+}
+
+.glitch span:last-child {
+    animation: glitch 375ms infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(0.04em, 0.03em);
+    opacity: 0.75;
+}
+  
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+        0.025em 0.04em 0 #fffc00;
+    }
+
+    15% {
+      text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+        0.025em 0.04em 0 #fffc00;
+    }
+
+    16% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+        -0.05em -0.05em 0 #fffc00;
+    }
+
+    49% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+        -0.05em -0.05em 0 #fffc00;
+    }
+
+    50% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+        0 -0.04em 0 #fffc00;
+    }
+
+    99% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+        0 -0.04em 0 #fffc00;
+    }
+
+    100% {
+        text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+        -0.04em -0.025em 0 #fffc00;
+    }
+}
+
+#timer {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: #164f55;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #FFF;
+}
+
+button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 30%;
+    border: none;
+    border-radius: 5px;
+    background-color: #014753;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);    
+}
+
+button:hover {
+    background-color: #164f55;
+    transform: translateY(-5px);
+    transition: all 0.5s ease-in-out;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#scoreboard {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#player-score {
+    color: #2196f3;
+    background-color: #164f55;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#ai-score {
+    color: #f44336;
+    background-color: #164f55;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#player-score span, #ai-score span {
+    margin-right: 5px;
+}
+    
+    
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+    
+    #quiz-container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .glitch {
+        font-size: 20px;
+    }
+
+    button {
+        width: 50%;
+    }
+
+    #scoreboard {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    #player-score, #ai-score {
+        width: 45%;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    body {
+        font-size: 18px;
+    }
+
+    #quiz-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .glitch {
+        font-size: 24px;
+    }
+
+    button {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .glitch {
+        font-size: 16px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    button {
+        width: 70%;
+        font-size: 14px;
+    }
+}    
